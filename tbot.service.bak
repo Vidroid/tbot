@@ -1,0 +1,23 @@
+[Unit]
+Description=Telegram bot TBot
+After=syslog.target
+Wants=network.target
+After=network.target
+
+# After=network-online.target
+[Service]
+Restart=always
+RestartSec=30s
+TimeoutSec=100
+Type=simple
+User=root
+
+# Group=SOMEUSER
+OOMScoreAdjust=-100
+WorkingDirectory=/home/vidro/tbot/tbot
+PIDFile=/home/vidro/tbot/tbot/shared/tmp/pids/service.pid
+ExecStart=/home/vidro/tbot/tbot/venv/bin/python3 /home/vidro/tbot/tbot/main.py
+# sudo nano /etc/systemd/system/tbot.service # ????????? ???????
+
+[Install]
+WantedBy=multi-user.target
