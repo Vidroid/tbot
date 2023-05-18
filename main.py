@@ -79,6 +79,8 @@ try:
         if message.from_user.id == conf.ME:
             if message.text.lower() == 'дайид':
                 await bot.send_message(message.chat.id, message.chat.id)
+        if message.text.lower() == 'толя':
+            await bot.send_message(message.chat.id, 'Пидор!')
 
         if message.from_user.id == conf.ME:
             if message.text.lower() == 'ало':
