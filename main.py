@@ -11,7 +11,7 @@ try:
     # Диспетчер для бота
     dp = Dispatcher(bot)
     # Включаем логирование, чтобы не пропустить важные сообщения
-    logging.basicConfig(filename='tbot.log', encoding='utf-8', level=logging.DEBUG)
+    logging.basicConfig(filename='tbot.log',level=logging.DEBUG)
     # logging.basicConfig(level=logging.INFO)
     logging.debug('obj init')
 
@@ -84,21 +84,32 @@ try:
             if message.text.lower() == 'ало':
                 await bot.send_message(message.chat.id, 'who-ем по лбу не дало?')
 
-        if message.from_user.id == conf.ME:
-            if message.text.lower() == 'алтарь':
+        if message.chat.id == conf.LAMP:
+            if message.text.lower() == 'олотарь':
                 msg = await bot.send_dice(message.chat.id)
+                last = '';
                 if msg.dice.value == 1:
-                    await bot.send_message(message.chat.id, 'Иса')
+                    last = 'Иса'
                 elif msg.dice.value == 2:
-                    await bot.send_message(message.chat.id, 'Гебо')
+                    last = 'Гебо'
                 elif msg.dice.value == 3:
-                    await bot.send_message(message.chat.id, 'Исс')
+                    last = 'Исс'
                 elif msg.dice.value == 4:
-                    await bot.send_message(message.chat.id, 'Дагаз')
+                    last = 'Дагаз'
                 elif msg.dice.value == 5:
-                    await bot.send_message(message.chat.id, 'Тир')
+                    last = 'Тир'
                 elif msg.dice.value == 6:
-                    await bot.send_message(message.chat.id, 'Ну хуууууй знает. Тут Эйви. Мб лучше Тир?')
+                    last = 'Эйви'
+                await bot.unpin_all_chat_messages(conf.LAMP)
+                msg = await bot.send_message(conf.LAMP, last)
+                await bot.pin_chat_message(conf.LAMP, msg.message_id)
+                await bot.unpin_all_chat_messages(conf.TOP)
+                msg2 = await bot.send_message(conf.TOP, last)
+                await bot.pin_chat_message(conf.TOP, msg2.message_id)
+                await bot.unpin_all_chat_messages(conf.HIGH)
+                msg3 = await bot.send_message(conf.HIGH, last)
+                await bot.pin_chat_message(conf.HIGH, msg3.message_id)
+                await bot.send_message(conf.PIN, 'Done to ALL')
 
     if __name__ == "__main__":
         # Запуск бота
@@ -107,4 +118,4 @@ try:
         logging.debug('outto exec')
 except Exception as inst:
 
-    logging.debug(type(inst), inst.args, inst)
+    logging.debug(str(type(inst)), str(inst.args), str(inst))
