@@ -1,3 +1,5 @@
 /conf.py
 /.idea/
 /venv/
+/tbot.log
+/__pycache__/
