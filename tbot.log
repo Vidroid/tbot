@@ -19,3 +19,18 @@ DEBUG:root:into handler
 DEBUG:aiogram:Make request: "sendMessage" with data: "{'chat_id': 445092164, 'text': 'who-ем по лбу не дало?', 'parse_mode': 'html'}" and files "None"
 DEBUG:aiogram:Make request: "getUpdates" with data: "{'offset': 426177311, 'timeout': 20}" and files "None"
 DEBUG:aiogram:Response for sendMessage: [200] "'{"ok":true,"result":{"message_id":170,"from":{"id":5081208142,"is_bot":true,"first_name":"AloBY","username":"aloby_bot"},"chat":{"id":445092164,"first_name":"\\u0410","last_name":"\\u0410","username":"iamdro","type":"private"},"date":1684434850,"text":"who-\\u0435\\u043c \\u043f\\u043e \\u043b\\u0431\\u0443 \\u043d\\u0435 \\u0434\\u0430\\u043b\\u043e?"}}'"
+DEBUG:root:obj init
+DEBUG:root:into exec
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:aiogram:Make request: "getMe" with data: "{}" and files "None"
+DEBUG:aiogram:Response for getMe: [200] "'{"ok":true,"result":{"id":845562030,"is_bot":true,"first_name":"\\u041f\\u0438\\u043d\\u0430\\u043b\\u044c\\u0449\\u0435\\u0433","username":"pinay_bot","can_join_groups":true,"can_read_all_group_messages":true,"supports_inline_queries":true}}'"
+INFO:aiogram:Bot: Пинальщег [@pinay_bot]
+DEBUG:aiogram:Make request: "getWebhookInfo" with data: "{}" and files "None"
+DEBUG:aiogram:Response for getWebhookInfo: [200] "'{"ok":true,"result":{"url":"","has_custom_certificate":false,"pending_update_count":0}}'"
+DEBUG:aiogram:Make request: "deleteWebhook" with data: "{'drop_pending_updates': True}" and files "None"
+DEBUG:aiogram:Response for deleteWebhook: [200] "'{"ok":true,"result":true,"description":"Webhook is already deleted"}'"
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+DEBUG:aiogram:Make request: "getWebhookInfo" with data: "{}" and files "None"
+DEBUG:aiogram:Response for getWebhookInfo: [200] "'{"ok":true,"result":{"url":"","has_custom_certificate":false,"pending_update_count":0}}'"
+DEBUG:aiogram:Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
